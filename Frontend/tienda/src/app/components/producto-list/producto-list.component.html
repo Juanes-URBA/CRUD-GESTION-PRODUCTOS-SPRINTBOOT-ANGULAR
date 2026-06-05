@@ -1,0 +1,58 @@
+<div class="container">
+
+  <div class="header">
+    <h1>Productos</h1>
+
+    <a routerLink="/nuevo" class="btn">
+      Nuevo Producto
+    </a>
+  </div>
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let producto of productos">
+
+        <td>{{ producto.codigo }}</td>
+        <td>{{ producto.nombre }}</td>
+        <td>{{ producto.precio }}</td>
+        <td>{{ producto.cantidad }}</td>
+        <td>{{ producto.estado }}</td>
+
+        <td>
+
+          <a
+            [routerLink]="['/editar', producto.id]"
+            class="btn-edit">
+            Editar
+          </a>
+
+          <button
+            (click)="eliminar(producto.id!)"
+            class="btn-delete">
+
+            Eliminar
+
+          </button>
+
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>

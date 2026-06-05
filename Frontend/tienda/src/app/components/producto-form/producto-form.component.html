@@ -1,0 +1,83 @@
+<div class="form-container">
+
+  <h2>Registrar Producto</h2>
+
+  <form
+    [formGroup]="formulario"
+    (ngSubmit)="guardar()">
+
+    <div class="form-group">
+
+      <label>Código del producto</label>
+
+      <input
+        type="text"
+        formControlName="codigo">
+
+    </div>
+
+    <div class="form-group">
+
+      <label>Nombre del producto</label>
+
+      <input
+        type="text"
+        formControlName="nombre">
+
+    </div>
+
+    <div class="form-group">
+
+      <label>Descripción</label>
+
+      <textarea
+        formControlName="descripcion">
+      </textarea>
+
+    </div>
+
+    <div class="form-group">
+
+      <label>Precio</label>
+
+      <input
+        type="number"
+        formControlName="precio">
+
+    </div>
+
+    <div class="form-group">
+
+      <label>Cantidad disponible</label>
+
+      <input
+        type="number"
+        formControlName="cantidad">
+
+    </div>
+
+    <div class="form-group">
+
+      <label>Estado</label>
+
+      <select formControlName="estado">
+
+        <option value="Activo">
+          Activo
+        </option>
+
+        <option value="Inactivo">
+          Inactivo
+        </option>
+
+      </select>
+
+    </div>
+
+    <button type="submit">
+      Guardar Producto
+    </button>
+
+  </form>
+
+</div>
